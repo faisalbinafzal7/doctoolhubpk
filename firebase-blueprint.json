@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "Stores user profile information and account status.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string", "format": "uri" },
+        "role": { "type": "string", "enum": ["user", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "lastLogin": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "history": {
+      "title": "Tool Usage History",
+      "description": "Logs when a user uses a specific tool.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "toolId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "metadata": { "type": "object" }
+      },
+      "required": ["userId", "toolId", "timestamp"]
+    },
+    "toolStats": {
+      "title": "Tool Statistics",
+      "description": "Global statistics for each tool.",
+      "type": "object",
+      "properties": {
+        "usageCount": { "type": "number" },
+        "lastUsed": { "type": "string", "format": "date-time" }
+      },
+      "required": ["usageCount"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profile document"
+    },
+    "/users/{userId}/history/{historyId}": {
+      "schema": "history",
+      "description": "User tool usage history"
+    },
+    "/toolStats/{toolId}": {
+      "schema": "toolStats",
+      "description": "Global tool usage statistics"
+    }
+  }
+}

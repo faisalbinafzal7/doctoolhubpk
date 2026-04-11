@@ -1,0 +1,130 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: {userId}
+    // Fields:
+    //   - uid: string (required) - Firebase Auth UID
+    //   - email: string (required) - User email
+    //   - displayName: string (optional) - User display name
+    //   - photoURL: string (optional) - User photo URL
+    //   - role: string (required, enum: ['user', 'admin']) - User role
+    //   - createdAt: string (required, date-time) - Account creation date
+    //   - lastLogin: string (required, date-time) - Last login date
+    //
+    // Collection: users/{userId}/history
+    // Document ID: {historyId}
+    // Fields:
+    //   - userId: string (required) - User UID
+    //   - toolId: string (required) - ID of the tool used
+    //   - timestamp: string (required, date-time) - When the tool was used
+    //   - metadata: map (optional) - Additional tool-specific data
+    //
+    // Collection: toolStats
+    // Document ID: {toolId}
+    // Fields:
+    //   - usageCount: number (required) - Total times the tool has been used
+    //   - lastUsed: timestamp (required) - Last usage timestamp
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() &&
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' ||
+          (request.auth.token.email == "faisalbinafzal7@gmail.com" && request.auth.token.email_verified == true));
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isRecent(time) {
+      return time is timestamp &&
+             time > request.time - duration.value(5, 'm') &&
+             time <= request.time;
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email', 'role']) &&
+             data.uid is string && data.uid == request.auth.uid &&
+             isValidEmail(data.email) &&
+             data.role in ['user', 'admin'] &&
+             (data.displayName == null || (data.displayName is string && data.displayName.size() < 100)) &&
+             (data.photoURL == null || (data.photoURL is string && data.photoURL.size() < 500)) &&
+             (data.createdAt == null || data.createdAt is timestamp) &&
+             data.lastLogin is timestamp;
+    }
+
+    function isValidHistory(data, userId) {
+      return data.keys().hasAll(['userId', 'toolId', 'timestamp']) &&
+             data.userId == userId &&
+             data.userId == request.auth.uid &&
+             data.toolId is string && data.toolId.size() < 100 &&
+             data.timestamp is timestamp;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      
+      allow create: if isAuthenticated() && 
+                      isValidUser(request.resource.data) && 
+                      (request.resource.data.role == 'user' || isAdmin());
+                      
+      allow update: if isAuthenticated() && 
+                      isValidUser(request.resource.data) && 
+                      (isOwner(userId) && request.resource.data.role == resource.data.role || isAdmin());
+      
+      match /history/{historyId} {
+        allow read: if isOwner(userId) || isAdmin();
+        allow create: if isOwner(userId) && isValidHistory(request.resource.data, userId);
+        allow update, delete: if isAdmin();
+      }
+    }
+
+    match /toolStats/{toolId} {
+      allow read: if true; // Publicly readable
+      
+      // Allow users to increment usageCount
+      allow create: if isAuthenticated() && 
+                      request.resource.data.keys().hasAll(['usageCount', 'lastUsed']) &&
+                      request.resource.data.usageCount == 1 &&
+                      request.resource.data.lastUsed == request.time;
+                      
+      allow update: if isAuthenticated() && 
+                      request.resource.data.diff(resource.data).affectedKeys().hasOnly(['usageCount', 'lastUsed']) &&
+                      request.resource.data.usageCount == resource.data.usageCount + 1 &&
+                      request.resource.data.lastUsed == request.time;
+
+      allow delete: if isAdmin();
+    }
+
+    // Default deny
+    match /{path=**} {
+      allow read, write: if false;
+    }
+  }
+}

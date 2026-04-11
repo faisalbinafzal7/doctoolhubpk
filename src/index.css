@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer base {
+  .prose {
+    @apply text-slate-700 leading-relaxed;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply font-bold text-slate-900 tracking-tight mt-8 mb-4;
+  }
+
+  .prose p {
+    @apply mb-6 leading-8;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-6 space-y-3;
+  }
+
+  .prose a {
+    @apply text-sky-600 font-medium hover:text-sky-700 underline underline-offset-4 transition-colors;
+  }
+}
