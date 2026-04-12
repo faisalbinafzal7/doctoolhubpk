@@ -32,14 +32,8 @@ jobs:
           VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
 
-      - name: List build files (Debug)
-        run: ls -R dist/
-
-      - name: Create Tracking File
-        run: echo "This file was uploaded to the root of the FTP account on $(date)" > dist/WHERE_IS_MY_SITE.txt
-
       - name: Deploy via FTP
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
-          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; set ftp:passive-mode on; mirror -R dist/ public_html/; quit" 185.232.14.158
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; set ftp:passive-mode on; set net:timeout 10; set net:max-retries 2; mirror -R dist/ public_html/; quit" 185.232.14.158
