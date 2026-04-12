@@ -39,13 +39,7 @@ jobs:
         run: echo "This file was uploaded to the root of the FTP account on $(date)" > dist/WHERE_IS_MY_SITE.txt
 
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./dist/
-          server-dir: ./public_html/
-          dangerous-clean-slate: true
-          timeout: 60000
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; set ftp:passive-mode on; mirror -R dist/ public_html/; quit" 185.232.14.158
