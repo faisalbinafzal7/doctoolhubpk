@@ -32,8 +32,15 @@ jobs:
           VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
 
-      - name: Deploy via FTP
+      - name: Test FTP Connection
+        run: nc -zv 185.232.14.158 21
+
+      - name: List FTP Folders (Debug)
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
-          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; set ftp:passive-mode on; set net:timeout 10; set net:max-retries 2; mirror -R dist/ public_html/; quit" 185.232.14.158
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; ls; quit" 185.232.14.158
+
+      - name: Deploy via FTP
+        run: |
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; set ftp:passive-mode on; set net:timeout 30; set net:max-retries 3; debug 3; mirror -R dist/ ./; quit" 185.232.14.158
