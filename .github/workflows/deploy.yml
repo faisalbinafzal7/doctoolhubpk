@@ -36,4 +36,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
-          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; set ftp:passive-mode on; set net:timeout 60; set net:max-retries 10; mirror -R --parallel=1 dist/ public_html/; quit" 185.232.14.158
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e "set ftp:ssl-allow no; set ftp:passive-mode on; set ftp:use-mlsd no; set net:timeout 60; set net:max-retries 5; mirror -R --parallel=1 dist/ public_html/; quit" doctoolhubpk.com
