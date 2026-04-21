@@ -1,0 +1,37 @@
+Analyze word count, character count, and sentence structure in real time.
+Generate hundreds of SEO-friendly long tail keywords instantly.
+Beautify, minify, and validate JSON data instantly.
+Encode and decode data securely for web applications.
+Instantly change text to uppercase, lowercase, or title case.
+Create strong, secure, high-entropy passwords for maximum protection.
+Encode and decode URLs securely for web applications.
+Generate hash values for data verification and integrity.
+Count characters precisely for meta descriptions and titles.
+Convert text into binary and vice versa.
+Minify HTML code to reduce file size and improve loading speed.
+Minify CSS code to reduce file size and improve loading speed.
+Minify JS code to reduce file size and improve loading speed.
+Convert RGB color values to HEX codes with live preview.
+Convert HEX color codes to RGB values with live preview.
+Convert text into SEO-friendly URLs with custom options and stats.
+Clean up messy text by removing unnecessary line breaks.
+Generate random numbers within a range.
+Generate custom QR codes for URLs, text, Wi-Fi, and more.
+Convert images into Base64 strings for embedding directly into code.
+Combine multiple PDF files into one effortlessly.
+Split large PDFs into smaller sections easily.
+Extract raw text from PDF files for easy editing and reuse.
+Fix incorrectly oriented PDF pages instantly.
+Transform PDFs into editable Word documents with ease.
+Convert Word documents into professional PDF files.
+Convert Word documents into Excel spreadsheets.
+Convert PDF files into fully editable PowerPoint presentations.
+Extract tables from PDF files into structured Excel spreadsheets.
+Convert Excel documents into professional PDF files.
+Crop images precisely using predefined aspect ratios.
+Resize images while preserving the original aspect ratio.
+Reduce image file size while maintaining high quality.
+Convert images between popular formats like JPG, PNG, and WebP.
+Rotate or flip images instantly in your browser.
+Convert CSV files or data to JSON format instantly.
+Convert JSON data to CSV format instantly.
