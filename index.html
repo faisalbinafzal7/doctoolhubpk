@@ -2,27 +2,100 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DocToolHubPK - Ultimate Free Online Tools Hub</title>
-    <meta name="description" content="DocToolHubPK is your all-in-one platform for image tools, PDF converters, SEO utilities, and developer tools. Completely free, fast, and secure." />
-    <meta name="keywords" content="free online tools, pdf converter, image tools, seo tools, developer tools, word counter, json formatter, base64 encoder" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>DocToolHubPK | All-in-One Free Online PDF, Image, SEO & Dev Tools</title>
+    <meta name="description" content="Discover DocToolHubPK, the ultimate hub for 40+ free online tools. Convert PDFs, edit images, generate SEO keywords, and format code—all 100% private and processed locally in your browser. No signups, no uploads." />
+    <meta name="keywords" content="free online tools, pdf to word, image compressor online, seo keyword research, json formatter, free developer utilities, private browser-based tools, DocToolHubPK tools hub" />
     <meta name="author" content="DocToolHubPK" />
-    <meta property="og:title" content="DocToolHubPK - Ultimate Free Online Tools Hub" />
-    <meta property="og:description" content="All-in-one platform for image tools, PDF converters, SEO utilities, and developer tools. 100% free and secure." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://doctoolhubpk.com/" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://doctoolhubpk.com/" />
+    <meta property="og:title" content="DocToolHubPK: 40+ Fast, Free & Private Online Productivity Tools" />
+    <meta property="og:description" content="Simplify your workflow with DocToolHubPK. From PDF merging to image resizing and SEO optimization—handle it all securely in your browser with 100% data privacy." />
+    <meta property="og:image" content="https://doctoolhubpk.com/og-image.png" />
+    <meta property="og:site_name" content="DocToolHubPK" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DocToolHubPK - Ultimate Free Online Tools Hub" />
-    <meta name="twitter:description" content="All-in-one platform for image tools, PDF converters, SEO utilities, and developer tools. 100% free and secure." />
+    <meta name="twitter:url" content="https://doctoolhubpk.com/" />
+    <meta name="twitter:title" content="DocToolHubPK | Professional & Private Free Online Tools" />
+    <meta name="twitter:description" content="Stop uploading sensitive files to servers. Use DocToolHubPK for browser-based, secure document and image processing. Fast, free, and no installation required." />
+    <meta name="twitter:image" content="https://doctoolhubpk.com/og-image.png" />
+    <meta name="twitter:site" content="@doctoolhubpk" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/favicon.svg">
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#0ea5e9" />
+    <style>
+      body { background-color: #f8fafc; margin: 0; font-family: system-ui, sans-serif; }
+      .loading-placeholder { 
+        display: flex; 
+        height: 100vh; 
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+      }
+      .spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid #e2e8f0;
+        border-bottom-color: #0ea5e9;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      @keyframes rotation {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .loading-text {
+        margin-top: 16px;
+        color: #64748b;
+        font-weight: 500;
+        font-family: sans-serif;
+      }
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DocToolHubPK",
+        "url": "https://doctoolhubpk.com/",
+        "logo": "https://doctoolhubpk.com/favicon.svg",
+        "sameAs": [
+          "https://twitter.com/doctoolhubpk",
+          "https://facebook.com/doctoolhubpk",
+          "https://linkedin.com/company/doctoolhubpk"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "DocToolHubPK",
+        "url": "https://doctoolhubpk.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://doctoolhubpk.com/all-tools?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-placeholder">
+        <span class="spinner"></span>
+        <div class="loading-text">Loading DocToolHubPK...</div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

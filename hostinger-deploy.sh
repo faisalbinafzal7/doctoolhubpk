@@ -1,20 +1,21 @@
 #!/bin/bash
 # hostinger-deploy.sh
 
-echo "🚀 Building DocToolHubPK for Hostinger deployment..."
+echo "🚀 Starting clean build for DocToolHubPK..."
+
+# 1. Clean previous builds
+rm -rf dist
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the build (this generates sitemap and vite build)
 npm run build
 
-echo "✅ Build complete! Files are in 'dist' folder"
-
-echo ""
-echo "📦 DEPLOYMENT INSTRUCTIONS:"
-echo "================================================"
-echo "1. Login to your Hostinger panel"
-echo "2. Go to Hosting → File Manager"
-echo "3. Navigate to public_html directory"
-echo "4. Upload all files from 'dist' folder"
-echo "5. OR use FTP to upload:"
-echo "   - Host: ftp.doctoolhubpk.com"
-echo "   - Username: u624188561"
-echo "   - Password: (your FTP password)"
-echo "================================================"
+echo "✅ Build complete!"
+echo "------------------------------------------------"
+echo "HOW TO DEPLOY MANUALLY:"
+echo "1. Go to Hostinger File Manager -> /public_html"
+echo "2. Upload all files from the 'dist' folder"
+echo "3. Ensure .htaccess is also uploaded"
+echo "------------------------------------------------"
