@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#paint0_linear_placeholder)"/>
+  <circle cx="1100" cy="100" r="150" fill="white" fill-opacity="0.05"/>
+  <circle cx="100" cy="530" r="200" fill="white" fill-opacity="0.03"/>
+  <g transform="translate(600, 260)">
+    <rect x="-100" y="-80" width="200" height="160" rx="16" fill="white"/>
+    <rect x="-80" y="-60" width="160" height="120" rx="8" fill="#f1f5f9"/>
+    <text x="0" y="10" text-anchor="middle" fill="#94a3b8" style="font-family: sans-serif; font-weight: 700; font-size: 24px;">IMAGE</text>
+  </g>
+  <text x="600" y="480" text-anchor="middle" fill="white" style="font-family: sans-serif; font-weight: 900; font-size: 80px;">PLACEHOLDER GEN</text>
+  <text x="600" y="540" text-anchor="middle" fill="white" fill-opacity="0.8" style="font-family: sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.2em;">IMAGE TOOLS</text>
+  <defs>
+    <linearGradient id="paint0_linear_placeholder" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#paint0_linear_excel)"/>
+  <circle cx="1100" cy="100" r="150" fill="white" fill-opacity="0.05"/>
+  <circle cx="100" cy="530" r="200" fill="white" fill-opacity="0.03"/>
+  <g transform="translate(600, 260)">
+    <rect x="-70" y="-90" width="140" height="180" rx="12" fill="white"/>
+    <rect x="-40" y="-50" width="80" height="12" rx="4" fill="#22c55e"/>
+    <rect x="-45" y="-20" width="90" height="60" rx="4" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <line x1="-15" y1="-20" x2="-15" y2="40" stroke="#22c55e" stroke-width="2"/>
+    <line x1="15" y1="-20" x2="15" y2="40" stroke="#22c55e" stroke-width="2"/>
+    <line x1="-45" y1="0" x2="45" y2="0" stroke="#22c55e" stroke-width="2"/>
+    <line x1="-45" y1="20" x2="45" y2="20" stroke="#22c55e" stroke-width="2"/>
+    <text x="0" y="70" text-anchor="middle" fill="#22c55e" style="font-family: sans-serif; font-weight: 800; font-size: 32px;">XLS</text>
+  </g>
+  <text x="600" y="480" text-anchor="middle" fill="white" style="font-family: sans-serif; font-weight: 900; font-size: 80px;">EXCEL TOOL</text>
+  <text x="600" y="540" text-anchor="middle" fill="white" fill-opacity="0.8" style="font-family: sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.2em;">DATA TOOLS</text>
+  <defs>
+    <linearGradient id="paint0_linear_excel" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22c55e"/><stop offset="1" stop-color="#14532d"/>
+    </linearGradient>
+  </defs>
+</svg>

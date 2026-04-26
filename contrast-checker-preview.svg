@@ -1,0 +1,49 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dynamic Contrast Background -->
+  <rect width="600" height="630" fill="#0f172a"/>
+  <rect x="600" width="600" height="630" fill="#f8fafc"/>
+  
+  <!-- Centered Decorative Elements -->
+  <circle cx="600" cy="315" r="250" stroke="url(#paint0_linear)" stroke-width="2" stroke-dasharray="20 20"/>
+
+  <!-- Main Visual: Contrast Comparison -->
+  <g transform="translate(600, 315)">
+    <!-- Dark Side Text -->
+    <text x="-150" y="20" text-anchor="middle" fill="#f8fafc" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 140px; letter-spacing: -0.05em;">
+      A
+    </text>
+    <!-- Light Side Text -->
+    <text x="150" y="20" text-anchor="middle" fill="#0f172a" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 140px; letter-spacing: -0.05em;">
+      A
+    </text>
+    
+    <!-- Pass Badge -->
+    <rect x="-60" y="100" width="120" height="50" rx="25" fill="#22c55e"/>
+    <text x="0" y="132" text-anchor="middle" fill="white" style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase;">
+      PASS
+    </text>
+  </g>
+
+  <!-- Title Text -->
+  <text x="600" y="520" text-anchor="middle" fill="#0f172a" style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: 64px; letter-spacing: -0.04em;">
+    CONTRAST CHECKER
+  </text>
+  
+  <!-- Subtitle Text -->
+  <text x="600" y="570" text-anchor="middle" fill="#64748b" style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.1em; text-transform: uppercase;">
+    Accessibility Compliance Tool
+  </text>
+
+  <!-- Branded Header -->
+  <rect x="510" y="40" width="180" height="40" rx="20" fill="#0ea5e9"/>
+  <text x="600" y="66" text-anchor="middle" fill="white" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px;">
+    DocToolHubPK
+  </text>
+
+  <defs>
+    <linearGradient id="paint0_linear" x1="400" y1="100" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+</svg>

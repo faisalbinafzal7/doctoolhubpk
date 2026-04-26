@@ -1,0 +1,8 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#paint0_linear)"/>
+  <rect x="520" y="180" width="160" height="160" rx="24" fill="white"/>
+  <text x="600" y="300" text-anchor="middle" fill="#0ea5e9" style="font-family: sans-serif; font-weight: 900; font-size: 60px;">64</text>
+  <text x="600" y="480" text-anchor="middle" fill="white" style="font-family: sans-serif; font-weight: 900; font-size: 80px;">BASE64 TOOL</text>
+  <text x="600" y="540" text-anchor="middle" fill="white" fill-opacity="0.8" style="font-family: sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.2em;">DEV TOOLS</text>
+  <defs><linearGradient id="paint0_linear" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse"><stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#1e40af"/></linearGradient></defs>
+</svg>

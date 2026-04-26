@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#paint0_linear_converter)"/>
+  <circle cx="1100" cy="100" r="150" fill="white" fill-opacity="0.05"/>
+  <circle cx="100" cy="530" r="200" fill="white" fill-opacity="0.03"/>
+  <g transform="translate(600, 260)">
+    <rect x="-80" y="-80" width="160" height="160" rx="24" fill="white"/>
+    <path d="M-40 -20H20L40 0L20 20H-40M-40 20L-55 0L-40 -20" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="5" text-anchor="middle" fill="#0ea5e9" style="font-family: sans-serif; font-weight: 800; font-size: 20px;">GIF PNG JPG</text>
+  </g>
+  <text x="600" y="480" text-anchor="middle" fill="white" style="font-family: sans-serif; font-weight: 900; font-size: 80px;">IMAGE CONVERTER</text>
+  <text x="600" y="540" text-anchor="middle" fill="white" fill-opacity="0.8" style="font-family: sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.2em;">IMAGE TOOLS</text>
+  <defs>
+    <linearGradient id="paint0_linear_converter" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+</svg>

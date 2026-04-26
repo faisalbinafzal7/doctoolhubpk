@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#paint0_linear_json_formatter)"/>
+  <rect x="520" y="180" width="160" height="160" rx="24" fill="white"/>
+  <path d="M560 220L545 235L560 250M640 220L655 235L640 250M590 220L610 260" stroke="#0ea5e9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="480" text-anchor="middle" fill="white" style="font-family: sans-serif; font-weight: 900; font-size: 80px;">JSON FORMATTER</text>
+  <text x="600" y="540" text-anchor="middle" fill="white" fill-opacity="0.8" style="font-family: sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 0.2em;">DEV TOOLS</text>
+  <defs>
+    <linearGradient id="paint0_linear_json_formatter" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+</svg>
