@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /dashboard/
 
-Sitemap: https://ais-dev-btsgckwr4ot7xu7xerfnl5-326037664893.asia-southeast1.run.app/sitemap.xml
+Sitemap: https://doctoolhubpk.com/sitemap.xml
